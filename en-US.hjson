@@ -1,0 +1,22 @@
+﻿Mods: {
+	BossLifeSteal: {
+		Config: {
+			Label: Config
+			Header.GeneralOptions: General Options
+
+			LifeStealMulti: {
+				Label: Life Steal Multiplier
+				Tooltip: How much life it will take. The amount of life it will heal is damage * multiplier.
+			}
+
+			EnableChat: {
+				Label: Enable Chat?
+				Tooltip: Should the chat say how much the boss healed for?
+			}
+		}
+
+		Chat: {
+			heal:  has healed.
+		}
+	}
+}

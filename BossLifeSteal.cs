@@ -25,13 +25,17 @@ namespace BossLifeSteal
 
         public void LifeSteal(NPC boss, int damage)
         {
-            int heal = damage * 5;
+            int heal = damage * BossLifeStealConfig.Instance.LifeStealMulti;
             boss.life += heal;
             if (boss.life > boss.lifeMax)
             {
                 boss.life = boss.lifeMax;
             }
-            Talk(boss.FullName + " has healed " + heal + " HP.", Color.Red);
+
+            if (BossLifeStealConfig.Instance.EnableChat)
+            {
+                Talk(boss.FullName + Language.GetTextValue("Mods.BossLifeSteal.Chat.heal") + heal + " HP.", Color.Red);
+            }
         }
     }
 
