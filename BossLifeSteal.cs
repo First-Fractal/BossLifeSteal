@@ -7,9 +7,9 @@ using Microsoft.Xna.Framework;
 
 namespace BossLifeSteal
 {
-	public class BossLifeSteal : Mod
-	{
-        public int[] BossParts = { NPCID.EaterofWorldsHead, NPCID.EaterofWorldsBody, NPCID.EaterofWorldsTail, NPCID.Creeper, NPCID.SkeletronHand, NPCID.SkeletronHead, NPCID.WallofFleshEye, NPCID.TheDestroyer, NPCID.TheDestroyerBody, NPCID.TheDestroyerTail, NPCID.Probe, NPCID.PrimeCannon, NPCID.PrimeLaser, NPCID.PrimeSaw, NPCID.PrimeVice, NPCID.PlanterasHook, NPCID.PlanterasTentacle, NPCID.GolemFistLeft, NPCID.GolemFistRight, NPCID.GolemHead, NPCID.GolemHeadFree, NPCID.CultistTablet, NPCID.CultistBossClone, NPCID.MoonLordCore, NPCID.MoonLordHand, NPCID.MoonLordHead, NPCID.MoonLordFreeEye, NPCID.MoonLordLeechBlob };
+    public class BossLifeSteal : Mod
+    {
+        
         public void Talk(string message, Color color)
         {
             if (Main.netMode == NetmodeID.SinglePlayer)
@@ -34,8 +34,8 @@ namespace BossLifeSteal
         }
     }
 
-	public class BossLifeStealNPC : GlobalNPC
-	{
+    public class BossLifeStealNPC : GlobalNPC
+    {
         public static BossLifeSteal BLS = new BossLifeSteal();
         public override void ModifyHitPlayer(NPC npc, Player target, ref int damage, ref bool crit)
         {
