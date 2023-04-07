@@ -34,7 +34,7 @@ namespace BossLifeSteal
 
             if (BossLifeStealConfig.Instance.EnableChat)
             {
-                Talk(boss.FullName + Language.GetTextValue("Mods.BossLifeSteal.Chat.heal") + heal + " HP.", Color.Red);
+                Talk(boss.FullName + " " + Language.GetTextValue("Mods.BossLifeSteal.Chat.heal") + " " + heal +" HP.", Color.Red);
             }
         }
     }

@@ -25,12 +25,12 @@ namespace BossLifeSteal
         //[Increment(10)]
         [Slider]
         [DrawTicks()]
-        [DefaultValue(5)]
+        [DefaultValue(3)]
         public int LifeStealMulti;
 
         [Label("$Mods.BossLifeSteal.Config.EnableChat.Label")]
         [Tooltip("$Mods.BossLifeSteal.Config.EnableChat.Tooltip")]
-        [DefaultValue(false)]
+        [DefaultValue(true)]
         public bool EnableChat;
     }
 }

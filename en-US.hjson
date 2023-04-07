@@ -16,7 +16,7 @@
 		}
 
 		Chat: {
-			heal:  has healed.
+			heal:  has healed for
 		}
 	}
 }
