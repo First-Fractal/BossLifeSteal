@@ -26,9 +26,9 @@ namespace BossLifeSteal
             }
         }
 
-        public void LifeSteal(NPC boss, int damage)
+        public void LifeSteal(NPC boss)
         {
-            int heal = damage * BossLifeStealConfig.Instance.LifeStealMulti;
+            int heal = (int) (boss.lifeMax * (BossLifeStealConfig.Instance.LifeSteal * 0.01));
             boss.life += heal;
             if (boss.life > boss.lifeMax)
             {
@@ -66,18 +66,25 @@ namespace BossLifeSteal
             return base.PreAI(npc);
         }
 
-        public override void ModifyHitPlayer(NPC npc, Player target, ref int damage, ref bool crit)
+        public override void ModifyHitPlayer(NPC npc, Player target, ref Player.HurtModifiers modifiers)
         {
-            if (npc.boss && npc.active)
+            if (target.onHitDodge || target.shadowDodge)
             {
-                BLS.LifeSteal(npc, damage);
+                return;
             }
 
-            foreach(int part in BLS.BossParts)
+            if (npc.boss && npc.active)
             {
-                if (part == npc.type && npc.active)
+                BLS.LifeSteal(npc);
+            }
+            else
+            {
+                foreach (int part in BLS.BossParts)
                 {
-                    BLS.LifeSteal(npc, damage);
+                    if (part == npc.type && npc.active)
+                    {
+                        BLS.LifeSteal(npc);
+                    }
                 }
             }
 
@@ -87,44 +94,11 @@ namespace BossLifeSteal
                 {
                     if (minion == npc.type && npc.active)
                     {
-                        BLS.LifeSteal(npc, damage);
+                        BLS.LifeSteal(npc);
                     }
                 }
             }
-            base.ModifyHitPlayer(npc, target, ref damage, ref crit);
-        }
-    }
-
-    public class BossLifeStealProjectile : GlobalProjectile
-    {
-        public static BossLifeSteal BLS = new BossLifeSteal();
-        public override void OnHitPlayer(Projectile projectile, Player target, int damage, bool crit)
-        {
-            if (Main.npc[projectile.owner].boss && Main.npc[projectile.owner].active)
-            {
-                BLS.LifeSteal(Main.npc[projectile.owner], damage);
-            }
-
-            foreach (int part in BLS.BossParts)
-            {
-                if (Main.npc[projectile.owner].type == part && Main.npc[projectile.owner].active)
-                {
-                    BLS.LifeSteal(Main.npc[projectile.owner], damage);
-                }
-            }
-
-            if (BLS.boss && BossLifeStealConfig.Instance.MinionsLifeSteal) 
-            {
-                foreach (int minion in BLS.BossMinions)
-                {
-                    if (Main.npc[projectile.owner].type == minion && Main.npc[projectile.owner].active)
-                    {
-                        BLS.LifeSteal(Main.npc[projectile.owner], damage);
-                    }
-                }
-            }
-
-            base.OnHitPlayer(projectile, target, damage, crit);
+            base.ModifyHitPlayer(npc, target, ref modifiers);
         }
     }
 }

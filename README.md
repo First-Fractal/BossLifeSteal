@@ -11,5 +11,9 @@ If you are a Terraria Content Creator that is going to use this mod, please give
 [Download it here](https://steamcommunity.com/sharedfiles/filedetails/?id=2961071453)
 
 # Change Log
+v1.2:
+Ported to 1.4.4.
+v1.1:
+Change the life steal system to be percentage of total health instead of damage dealt.
 v 1.0:
 Relased the mod.

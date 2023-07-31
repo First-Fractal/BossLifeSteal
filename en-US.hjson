@@ -1,12 +1,12 @@
-﻿Mods: {
+Mods: {
 	BossLifeSteal: {
 		Config: {
 			Label: Config
 			Header.GeneralOptions: General Options
 
 			LifeStealMulti: {
-				Label: Life Steal Multiplier
-				Tooltip: How much life it will take. The amount of life it will heal is damage * multiplier.
+				Label: Life Steal Percentage
+				Tooltip: How much life it will life steal. The amount of life it will heal is a percentage of the total health.
 			}
 
 			MinionsLifeSteal: {
@@ -20,8 +20,27 @@
 			}
 		}
 
-		Chat: {
-			heal:  has healed for
+		Chat.heal: has healed for
+
+		Configs: {
+			BossLifeStealConfig: {
+				EnableChat: {
+					Tooltip: "{$Mods.BossLifeSteal.Config.EnableChat.Tooltip}"
+					Label: "{$Mods.BossLifeSteal.Config.EnableChat.Label}"
+				}
+
+				MinionsLifeSteal: {
+					Tooltip: "{$Mods.BossLifeSteal.Config.MinionsLifeSteal.Tooltip}"
+					Label: "{$Mods.BossLifeSteal.Config.MinionsLifeSteal.Label}"
+				}
+
+				LifeSteal: {
+					Tooltip: "{$Mods.BossLifeSteal.Config.LifeStealMulti.Tooltip}"
+					Label: "{$Mods.BossLifeSteal.Config.LifeStealMulti.Label}"
+				}
+
+				DisplayName: "{$Mods.BossLifeSteal.Config.Label}"
+			}
 		}
 	}
 }

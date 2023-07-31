@@ -21,11 +21,10 @@ namespace BossLifeSteal
 
         [Label("$Mods.BossLifeSteal.Config.LifeStealMulti.Label")]
         [Tooltip("$Mods.BossLifeSteal.Config.LifeStealMulti.Tooltip")]
-        [Range(0, 20)]
+        [Range(0, 100)]
         [Slider]
-        [DrawTicks()]
-        [DefaultValue(3)]
-        public int LifeStealMulti;
+        [DefaultValue(4)]
+        public int LifeSteal;
 
         [Label("$Mods.BossLifeSteal.Config.MinionsLifeSteal.Label")]
         [Tooltip("$Mods.BossLifeSteal.Config.MinionsLifeSteal.Tooltip")]

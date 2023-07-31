@@ -1,3 +1,3 @@
 displayName = Boss Life Steal
 author = First Fractal
-version = 1.0
+version = 1.2

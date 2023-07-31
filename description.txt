@@ -6,6 +6,10 @@ The original idea for this mod was from Typhee420. I just coded the mod.
 If you are a Terraria Content Creator that is going to use this mod, please give me proper credit by mention that I was the one who made it, and that you link my channel (https://www.youtube.com/@first_fractal), mod, or website (https://firstfractal.com) in the description.
 
 Change Log
----------------------------------------
+----------------------------------------
+v1.2:
+Ported to 1.4.4.
+v1.1:
+Change the life steal system to be percentage of total health instead of damage dealt.
 v 1.0:
 Relased the mod.
